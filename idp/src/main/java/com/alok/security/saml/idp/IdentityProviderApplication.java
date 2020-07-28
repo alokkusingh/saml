@@ -23,11 +23,12 @@ public class IdentityProviderApplication {
         SpringApplication app = new SpringApplication(IdentityProviderApplication.class);
 
         Environment env = app.run(args).getEnvironment();
-        log.info("Identity Provider: Access URLs:\n----------------------------------------------------------\n\t" +
-                        "Local: \t\t\thttp://localhost:{}{}\n" +
-                        "----------------------------------------------------------",
+        log.info("Identity Provider: Access URLs:\n" +
+        "----------------------------------------------------------\n" +
+        "App URL: \t\t\thttp://localhost:{}{}\n" +
+        "Meta URL: \t\t\thttp://localhost:{}{}{}\n" +
+        "----------------------------------------------------------\n",
                 env.getProperty("server.port"), env.getProperty("server.servlet.context-path"),
-                InetAddress.getLocalHost().getHostAddress()
-        );
+                env.getProperty("server.port"), env.getProperty("server.servlet.context-path"), "/saml/idp/metadata");
     }
 }

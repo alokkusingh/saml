@@ -20,13 +20,14 @@ public class ServiceProviderApplication {
         SpringApplication app = new SpringApplication(ServiceProviderApplication.class);
 
         Environment env = app.run(args).getEnvironment();
-        log.info("Service Provider: Access URLs:\n----------------------------------------------------------\n\t" +
-                        "Local: \t\t\thttp://localhost:{}{}\n" +
-                        "----------------------------------------------------------",
-                env.getProperty("server.port"), env.getProperty("server.servlet.context-path"),
-                InetAddress.getLocalHost().getHostAddress()
-        );
 
+        log.info("Service Provider: Access URLs:\n" +
+                        "----------------------------------------------------------\n" +
+                        "App URL: \t\t\thttp://localhost:{}{}\n" +
+                        "Meta URL: \t\t\thttp://localhost:{}{}{}\n" +
+                        "----------------------------------------------------------\n",
+                env.getProperty("server.port"), env.getProperty("server.servlet.context-path"),
+                env.getProperty("server.port"), env.getProperty("server.servlet.context-path"), "/saml/sp/metadata");
     }
 
 }
