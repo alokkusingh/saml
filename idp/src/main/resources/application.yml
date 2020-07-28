@@ -10,7 +10,6 @@ logging:
 debug: true
 
 saml2:
-  # Only pkcs1 is accepted (pkcs8 is not)
   private-key-file: /Users/aloksingh/cert/IdP_pkcs1.key
   certificate-file: /Users/aloksingh/cert/IdP.crt
   identity-provider:
@@ -31,7 +30,6 @@ saml2:
         name: active-idp-key
         #private-key:
         passphrase: idppassword
-        #certificate:
     providers:
       - entity-id: hello-sp
         metadata: http://localhost:8082/hello-sp/saml/sp/metadata
