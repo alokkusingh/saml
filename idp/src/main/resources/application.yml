@@ -1,0 +1,39 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /alok-idp
+
+logging:
+  level:
+    root: info
+
+debug: true
+
+saml2:
+  # Only pkcs1 is accepted (pkcs8 is not)
+  private-key-file: /Users/aloksingh/cert/IdP_pkcs1.key
+  certificate-file: /Users/aloksingh/cert/IdP.crt
+  identity-provider:
+    base-path: http://localhost:8081/alok-idp
+    entity-id: alok-idp
+    sign-metadata: true
+    sign-assertions: true
+    want-requests-signed: true
+    signing-algorithm: RSA_SHA256
+    digest-method: SHA256
+    single-logout-enabled: true
+    name-ids:
+      - urn:oasis:names:tc:SAML:2.0:nameid-format:persistent
+      - urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress
+      - urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified
+    keys:
+      active:
+        name: active-idp-key
+        #private-key:
+        passphrase: idppassword
+        #certificate:
+    providers:
+      - entity-id: hello-sp
+        metadata: http://localhost:8082/hello-sp/saml/sp/metadata
+        link-text: Hello Service Provider Application
+      ## add new Service provider metadata here

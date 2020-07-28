@@ -1,0 +1,47 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /hello-sp
+
+spring:
+  thymeleaf:
+    cache: false
+
+logging:
+  level:
+    root: INFO
+
+saml2:
+  # Only pkcs1 is accepted (pkcs8 is not)
+  private-key-file: /Users/aloksingh/cert/saml_spcs_pkcs1.key
+  certificate-file: /Users/aloksingh/cert/saml_spcs.crt
+  network:
+    read-timeout: 10000
+    connect-timeout: 5000
+  service-provider:
+    entity-id: hello-sp
+    sign-metadata: true
+    sign-requests: true
+    want-assertions-signed: true
+    single-logout-enabled: true
+    name-ids:
+      - urn:oasis:names:tc:SAML:2.0:nameid-format:persistent
+      - urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress
+      - urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified
+    keys:
+      active:
+        name: sp-signing-key-1
+       # private-key: |
+       #   -----BEGIN RSA PRIVATE KEY-----
+       #   -----END RSA PRIVATE KEY-----
+        passphrase: sppassword
+        #passphrase:
+        #certificate: |
+        #  -----BEGIN CERTIFICATE-----
+        #  -----END CERTIFICATE-----
+    providers:
+      - entity-id: alok-idp
+        alias: alok-idp
+        metadata: http://localhost:8081/alok-idp/saml/idp/metadata
+        link-text: Alok Identity Provider Application
+      ## add new Identity provider metadata here
