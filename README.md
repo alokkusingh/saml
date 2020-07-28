@@ -2,6 +2,8 @@
 ## IdP and SP both the service provides SAML meta data URL to negotiate the service:
         - http://localhost:8081/alok-idp/saml/idp/metadata
         - http://localhost:8082/hello-sp/saml/sp/metadata
+        
+## It supports SAML authentication request by any one - IdP or SPS
 
 ## both the service sign and encrypt metata data and SAML Request and SAML Response
 
