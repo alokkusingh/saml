@@ -9,6 +9,7 @@ import org.springframework.security.saml.SamlRequestMatcher;
 import org.springframework.security.saml.provider.identity.IdentityProviderService;
 import org.springframework.security.saml.provider.identity.IdpInitiatedLoginFilter;
 import org.springframework.security.saml.provider.provisioning.SamlProviderProvisioning;
+import org.springframework.security.saml.saml2.authentication.AuthenticationRequest;
 import org.springframework.security.saml.saml2.metadata.NameId;
 import org.springframework.security.saml.saml2.metadata.ServiceProviderMetadata;
 
@@ -27,7 +28,10 @@ public class CustomIDPInitiatedLoginFilter extends IdpInitiatedLoginFilter {
         super(provisioning, assertionStore, requestMatcher);
     }
 
+
+    @Override
     protected Assertion getAssertion(Authentication authentication,
+                                     AuthenticationRequest authenticationRequest,
                                      IdentityProviderService provider,
                                      ServiceProviderMetadata recipient) {
         Assertion assertion = provider.assertion(recipient, authentication.getName(), NameId.PERSISTENT);

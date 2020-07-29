@@ -15,6 +15,7 @@ saml2:
     entity-id: alok-idp
     sign-metadata: true
     sign-assertions: true
+    encrypt-assertions: false
     want-requests-signed: true
     signing-algorithm: RSA_SHA256
     digest-method: SHA256
