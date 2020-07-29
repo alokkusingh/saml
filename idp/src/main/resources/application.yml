@@ -10,8 +10,6 @@ logging:
 debug: true
 
 saml2:
-  private-key-file: /Users/aloksingh/cert/IdP_pkcs1.key
-  certificate-file: /Users/aloksingh/cert/IdP.crt
   identity-provider:
     base-path: http://localhost:8081/alok-idp
     entity-id: alok-idp
@@ -28,7 +26,8 @@ saml2:
     keys:
       active:
         name: active-idp-key
-        #private-key:
+        private-key: /Users/aloksingh/cert/IdP_pkcs1.key
+        certificate: /Users/aloksingh/cert/IdP.crt
         passphrase: idppassword
     providers:
       - entity-id: hello-sp

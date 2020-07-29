@@ -12,9 +12,6 @@ logging:
     root: INFO
 
 saml2:
-  # Only pkcs1 is accepted (pkcs8 is not)
-  private-key-file: /Users/aloksingh/cert/saml_spcs_pkcs1.key
-  certificate-file: /Users/aloksingh/cert/saml_spcs.crt
   network:
     read-timeout: 10000
     connect-timeout: 5000
@@ -34,11 +31,12 @@ saml2:
        # private-key: |
        #   -----BEGIN RSA PRIVATE KEY-----
        #   -----END RSA PRIVATE KEY-----
+        private-key: /Users/aloksingh/cert/saml_spcs_pkcs1.key
         passphrase: sppassword
-        #passphrase:
         #certificate: |
         #  -----BEGIN CERTIFICATE-----
         #  -----END CERTIFICATE-----
+        certificate: /Users/aloksingh/cert/saml_spcs.crt
     providers:
       - entity-id: alok-idp
         alias: alok-idp

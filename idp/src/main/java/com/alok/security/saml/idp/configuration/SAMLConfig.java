@@ -31,15 +31,6 @@ public class SAMLConfig extends SamlIdentityProviderServerBeanConfiguration {
     @SneakyThrows
     @Override
     protected SamlServerConfiguration getDefaultHostSamlServerConfiguration() {
-
-        SimpleKey simpleKey = config.getIdentityProvider().getKeys().getActive();
-        if (simpleKey.getCertificate() == null) {
-            simpleKey.setCertificate(CommonUtils.parsePEMFile(config.getCertificateFile()));
-        }
-        if (simpleKey.getPrivateKey() == null) {
-            simpleKey.setPrivateKey(CommonUtils.parsePEMFile(config.getPrivateKeyFile()));
-        }
-
         return config;
     }
 

@@ -1,31 +1,29 @@
 package com.alok.security.saml.idp.configuration;
 
-import org.springframework.beans.factory.annotation.Value;
+import com.alok.security.saml.idp.utils.CommonUtils;
+import lombok.SneakyThrows;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.saml.key.SimpleKey;
 import org.springframework.security.saml.provider.SamlServerConfiguration;
+import org.springframework.security.saml.provider.identity.config.LocalIdentityProviderConfiguration;
 
 @ConfigurationProperties(prefix = "saml2")
 @Configuration
 public class AppProperties extends SamlServerConfiguration {
 
-    private String certificateFile;
-    private String privateKeyFile;
+    @SneakyThrows
+    @Override
+    public SamlServerConfiguration setIdentityProvider(LocalIdentityProviderConfiguration identityProvider) {
 
-    public String getCertificateFile() {
-        return certificateFile;
-    }
-
-    public void setCertificateFile(String certificateFile) {
-        this.certificateFile = certificateFile;
-    }
-
-    public String getPrivateKeyFile() {
-        return privateKeyFile;
-    }
-
-    public void setPrivateKeyFile(String privateKeyFile) {
-        this.privateKeyFile = privateKeyFile;
+        SimpleKey simpleKey = identityProvider.getKeys().getActive();
+        if (!simpleKey.getCertificate().startsWith("|") && !simpleKey.getCertificate().startsWith("-----BEGIN")) {
+            simpleKey.setCertificate(CommonUtils.parsePEMFile(simpleKey.getCertificate()));
+        }
+        if (!simpleKey.getPrivateKey().startsWith("|") && !simpleKey.getPrivateKey().startsWith("-----BEGIN")) {
+            simpleKey.setPrivateKey(CommonUtils.parsePEMFile(simpleKey.getPrivateKey()));
+        }
+        return super.setIdentityProvider(identityProvider);
     }
 }
 

@@ -1,12 +1,10 @@
 package com.alok.security.saml.sp.configuration;
 
-import com.alok.security.saml.sp.utils.CommonUtils;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.saml.SamlTemplateEngine;
-import org.springframework.security.saml.key.SimpleKey;
 import org.springframework.security.saml.provider.SamlServerConfiguration;
 import org.springframework.security.saml.provider.service.SelectIdentityProviderFilter;
 import org.springframework.security.saml.provider.service.config.SamlServiceProviderServerBeanConfiguration;
@@ -29,13 +27,6 @@ public class SAMLConfig extends SamlServiceProviderServerBeanConfiguration {
     @SneakyThrows
     @Override
     protected SamlServerConfiguration getDefaultHostSamlServerConfiguration() {
-        SimpleKey simpleKey = config.getServiceProvider().getKeys().getActive();
-        if (simpleKey.getCertificate() == null) {
-            simpleKey.setCertificate(CommonUtils.parsePEMFile(config.getCertificateFile()));
-        }
-        if (simpleKey.getPrivateKey() == null) {
-            simpleKey.setPrivateKey(CommonUtils.parsePEMFile(config.getPrivateKeyFile()));
-        }
         return config;
     }
 
