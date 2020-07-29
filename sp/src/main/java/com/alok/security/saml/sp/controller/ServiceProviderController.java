@@ -35,7 +35,8 @@ public class ServiceProviderController {
 
     @RequestMapping(value = {"/", "/index", "/logged-in"})
     public String home(Principal principal, Model model) {
-        log.info("Sample SP Application - You are logged in! - {}", principal.getName());
+        log.info("Sample SP Application - You are logged in! - {}",
+                principal.getName());
         model.addAttribute("username", principal.getName());
         return "logged-in";
     }

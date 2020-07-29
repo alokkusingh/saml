@@ -44,4 +44,104 @@ saml2:
         alias: alok-idp
         metadata: http://localhost:8081/alok-idp/saml/idp/metadata
         link-text: Alok Identity Provider Application
+
+      - entity-id: alok-idp2
+        alias: alok-idp2
+        metadata: |
+          <?xml version="1.0" encoding="UTF-8"?>
+          <md:EntityDescriptor ID="IDPM24408e7a-3675-48ba-b1fb-5b847c05a938" entityID="alok-idp" xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"><ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+          <ds:SignedInfo>
+          <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+          <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+          <ds:Reference URI="#IDPM24408e7a-3675-48ba-b1fb-5b847c05a938">
+          <ds:Transforms>
+          <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+          <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+          </ds:Transforms>
+          <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+          <ds:DigestValue>9R7gU4T93f34pWtsK3K3DrwoF03nAYNFGHCXeF90y3c=</ds:DigestValue>
+          </ds:Reference>
+          </ds:SignedInfo>
+          <ds:SignatureValue>
+          MbFq0E7guJCyiXquxFcVln9/P3UsPOSAsuHk9y0AIONPiFM9TB03lkIzq9u4Buh6MACz5R9FPdWV
+          LWyla8XnG6uq89ip+8bnqYaUpTKMPUf9qwuQLSD/KuBZCScaSqnFOPQdUX40aKd5AZeTEuLt8Cri
+          Z7A3H21S1VrXdJQNWchQ387OqAv2byGgFPB9/h70TPcr+h+tomfJw6ftAkj/TemuPPXIKuTTSh7f
+          h5KFGN74DgY/nxp7DhdtZNGomrNH4XTQr8HlWOeTH5p8sdtVOb7u35dv6SCTeBpA+CMWzxan+OJ7
+          R2ZfBFc7ECnYAOoTCQcBOhTnx4/bztg0SgErfUkrfLGasmOgbQmvTbKPnUXrlLbjwbK1gGl4MWZc
+          GiI7F4cMKtVSkeuQ8PubXZ21lMXPg+oe8hLljZiTbLYrEuz7sGYyD/lWqjnqGO1nsl0uYq5LrSnK
+          L5kpW9eIQ9ew5KVTVVfZgtvAbmlR8BlFEI26+BabXfqUPhULVh0kRSFgiDkaS8GJqRb/Pifx2NS5
+          VPuYXlfF63a5dZpm1yjbmVojpUEBKojWtMrWTD2i+9iCo739IOUQkoACI3DazFf6Lziuo81+G4nR
+          aUhg9BFhYnr0WGYlKM93oJP+aTfIB5hG4tyNBUYPbC4GrGjUY3biRXLpIilCN3ci8BoEaw7ao/w=
+          </ds:SignatureValue>
+          <ds:KeyInfo><ds:X509Data><ds:X509Certificate>MIIFITCCAwkCCQCk7pxWtNaMMzANBgkqhkiG9w0BAQUFADAWMRQwEgYDVQQDDAthbG9ra3VzaW5n
+          aDAeFw0yMDA3MjgxMjE3MzlaFw0yMTA3MjgxMjE3MzlaMIGOMQswCQYDVQQGEwJJTjESMBAGA1UE
+          CAwJS2VybmF0YWthMRIwEAYDVQQHDAlCYW5nYWxvcmUxDTALBgNVBAoMBEFsb2sxDTALBgNVBAsM
+          BEhvbWUxETAPBgNVBAMMCGFsb2tfaWRwMSYwJAYJKoZIhvcNAQkBFhdhbG9rLmt1LnNpbmdoQGdt
+          YWlsLmNvbTCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBAMxlExcunQkmQXQe1eXDL5z7
+          R75MoSaz5sCJXeEZ+VCBjJkfkCSPQB+gB1ulKVHa7QGv3R3S8nT7LPt1txYtkIA7bPRE/n2BMnDY
+          6/qq6Vchl+wb11OzUIrx6T4Oa92zEDBx5Fl7AuIgYGKk4xM01tpwJkqyhWnD0UiyZWA4+/l/mup5
+          2n0S8BtMAEuLXiGm556hhXxxssX0rQRQSq7JxdtpFlkZJIxbaw/+qH4vH6KALKZtKY+I34f1sX05
+          ZJwggfgINIIHEH6Bmr43s+OOv9NON/dc8HRYToOCrtGpRGTKesXhp7J6JG7HffQA9qi2TiZb0T3w
+          GZs11LZQb0zKtYwxTkSsjWvTs+/ACztv4gBFU9QAjFbKl0GmtdTmVpKU62SDK1/l5cno61WLQfF0
+          HJoMCEaQonMXecjWWcaRRBRB41nrY+x+z4fCo4kvObAryn5FCUQ0Clb8VWGrz4UOYilF2MyDdDcj
+          M1E8p/ARw12E9KXsVs+xp2YS3asVfrQjst6zatyCTbiOVq5ciCQvPP3JduAy9dIxxhlbTFOS5Hco
+          Z2FgWxoWk7Mt5yU1Ow5lEhvZcW5CZI7LAGpF6x8b6n539QM+LTIA7LdzD07ebtfUP7kcrELtJB4G
+          0gA3mjgVEX2WWP9/rOX0oFRZ4wARkeJtjOWNmJa+5PWc16t/V0w/AgMBAAEwDQYJKoZIhvcNAQEF
+          BQADggIBAB+plM8G29+9ueDwg1/l/J9Tu9ilvUClOGiLEV8Wj0SjFwCtCd6EP3NZJxCbPwoiWPFA
+          KvdJyA6KheDZreGcDvpzLI4NREeuOU1hX3QJ2Cku0VCx4nbJhdXU9f02otHtxNBT+qp+sJxlordU
+          JaXySZ/Ja6BQ7ydcycDykKcaNgk+YG6FSi+F82oCa06N/KldHHukUpQ/v42UFOM42Q0LHIpohIfz
+          3qOh4QfAwcjscohSISvAlPPYa5e6GtSwvlNoIZndoaF0VNssJbEEf95MMU3zejVbkwY5Pf/GNRHC
+          +Zx72bvOFBceHvIGCX5RnmDvpiuOizlPS4MQqfBjzMXDk62TlRoTB1ZY6cg2KaTvbGe3VekAtzQ8
+          QfB6OO4Yw4sr+OqjsByO1chHf4q//77Z85t56P1FLuBjpFXKxq2EAtPyonZq4VtXgdTrH5MrM8vF
+          lhlW1YDGtVtigIGaTSvuFOc+yO3OKH4RZ4E0IY+OHbbWQfgxM/yM9QqxcUSby06SPsqH6A7zUtoT
+          pPlyBvs5BS5Icb8Bg1p61fETZzGFBO662psy/m4/wfiGQ/jIMcuek4CCX/pPmQMA6raE8YucAYjA
+          khROt+4mNAdmI9MTa+qFqqMIRd6gZOXp6HT88y3ZiztSKo0+U2huOM7Si/TqozyybuEujlth0eUC
+          asmi6WCl</ds:X509Certificate></ds:X509Data></ds:KeyInfo></ds:Signature><md:IDPSSODescriptor ID="RD95c02ea8-e973-4acc-9a98-2e551851364a" WantAuthnRequestsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol"><md:KeyDescriptor use="signing"><ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><ds:X509Data><ds:X509Certificate>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
+          asmi6WCl</ds:X509Certificate></ds:X509Data></ds:KeyInfo></md:KeyDescriptor><md:KeyDescriptor use="encryption"><ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><ds:X509Data><ds:X509Certificate>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
+          asmi6WCl</ds:X509Certificate></ds:X509Data></ds:KeyInfo></md:KeyDescriptor><md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://localhost:8081/alok-idp/saml/idp/logout/alias/alok-idp"/><md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</md:NameIDFormat><md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat><md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat><md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://localhost:8081/alok-idp/saml/idp/SSO/alias/alok-idp"/><md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://localhost:8081/alok-idp/saml/idp/SSO/alias/alok-idp"/></md:IDPSSODescriptor></md:EntityDescriptor>
+        link-text: Alok Identity Provider Application 2
       ## add new Identity provider metadata here

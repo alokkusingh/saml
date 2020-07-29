@@ -34,4 +34,103 @@ saml2:
       - entity-id: hello-sp
         metadata: http://localhost:8082/hello-sp/saml/sp/metadata
         link-text: Hello Service Provider Application
+
+      - entity-id: hello-sp2
+        metadata: |
+          <?xml version="1.0" encoding="UTF-8"?>
+          <md:EntityDescriptor ID="SPM1c2319fd-bf23-4b3e-a025-b2af140fb0c1" entityID="hello-sp" xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"><ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+          <ds:SignedInfo>
+          <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+          <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+          <ds:Reference URI="#SPM1c2319fd-bf23-4b3e-a025-b2af140fb0c1">
+          <ds:Transforms>
+          <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+          <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+          </ds:Transforms>
+          <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+          <ds:DigestValue>vdokx15TdezF1gnKHPi6RGJgR7yzm+A31uLfkoRe9Nc=</ds:DigestValue>
+          </ds:Reference>
+          </ds:SignedInfo>
+          <ds:SignatureValue>
+          l02Z7+cW8Bd9uOD8NsXzyM8zz4xIZ7vde5mUbLYQC+7YH1Ce6/OEPMIAjGoVeJ3frh1Id0P1dWTU
+          T4rnpp5WHzsG87gPItGvNHe2DFZSalUQdz/7l6aHoXmqFKDjrosnt1sGv8tzFXMt6xEH3bZu3tGT
+          Sh2XGpJJnmQRnO/mPp30+8NLdW2fV1wwBBswKn0RZAcLFsYLkesiUGHhsUXU1Pd+GYYY3zdgyT6s
+          abXKjsxk+4wEWVMPCYw8WtrH+61K605B1QgaRGVcp9SX1cA/3nw1RyuuRUqGjA3JVGA0k41lp4+o
+          HtgtLk5Afc1DioY5p5+pGPQzFkacLiJL5O7QEUmx9e75/FUYnesIVhlcboqDQwhHbjH746qd2VLw
+          Sv4LoAlBZJphk5fYlsN1rMiX16UluvTS+a+N2Xq+AqH36bLzBWUar5FrtoygHc+OFdbVYOLo84xT
+          zdpTmpapc8wA71e/W8MkfVUI4jgpSXhJ9IsubpzE1upOuh//dRsxeQI/YtvQLstIXUv0kaMR0wv2
+          CgsCXvMTRfyMih4etvumENnTK+IUIY2zexxqFK1fKeA/PjYQGQEBCqFrDQAoNbNnXSmcg0zcvnHG
+          WXIAHCEA15f3b15LLBPv5A9Frjub3mvUwrCUfEROan/OREfri4GT4AkIiNgBCj8DXto7SA0n3Qc=
+          </ds:SignatureValue>
+          <ds:KeyInfo><ds:X509Data><ds:X509Certificate>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
+          M+YuYWDoUJ0=</ds:X509Certificate></ds:X509Data></ds:KeyInfo></ds:Signature><md:SPSSODescriptor AuthnRequestsSigned="true" ID="RD23ac4989-53fd-4812-b57b-d7f60f09a096" WantAssertionsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol"><md:KeyDescriptor use="signing"><ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><ds:X509Data><ds:X509Certificate>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
+          M+YuYWDoUJ0=</ds:X509Certificate></ds:X509Data></ds:KeyInfo></md:KeyDescriptor><md:KeyDescriptor use="encryption"><ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><ds:X509Data><ds:X509Certificate>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
+          M+YuYWDoUJ0=</ds:X509Certificate></ds:X509Data></ds:KeyInfo></md:KeyDescriptor><md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://localhost:8082/hello-sp/saml/sp/logout/alias/hello-sp"/><md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</md:NameIDFormat><md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat><md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat><md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://localhost:8082/hello-sp/saml/sp/SSO/alias/hello-sp" index="0" isDefault="true"/><md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://localhost:8082/hello-sp/saml/sp/SSO/alias/hello-sp" index="1" isDefault="false"/></md:SPSSODescriptor></md:EntityDescriptor>
+        link-text: Hello Service Provider Application 2
       ## add new Service provider metadata here

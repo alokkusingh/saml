@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.saml.key.SimpleKey;
 import org.springframework.security.saml.provider.SamlServerConfiguration;
+import org.springframework.security.saml.provider.identity.IdpInitiatedLoginFilter;
 import org.springframework.security.saml.provider.identity.config.SamlIdentityProviderServerBeanConfiguration;
 
 import javax.servlet.Filter;
@@ -39,7 +40,6 @@ public class SAMLConfig extends SamlIdentityProviderServerBeanConfiguration {
             simpleKey.setPrivateKey(CommonUtils.parsePEMFile(config.getPrivateKeyFile()));
         }
 
-
         return config;
     }
 
@@ -49,14 +49,15 @@ public class SAMLConfig extends SamlIdentityProviderServerBeanConfiguration {
         return new IDPInMemoryUserDetailsManager(allUsers);
     }
 
-    @Bean
+    @Override
     public Filter idpInitatedLoginFilter() {
         return new CustomIDPInitiatedLoginFilter(getSamlProvisioning(), samlAssertionStore());
     }
 
 
-    @Bean
+    @Override
     public Filter idpAuthnRequestFilter() {
         return new CustomIDPAuthenticationRequestFilter(getSamlProvisioning(), samlAssertionStore());
     }
+
 }

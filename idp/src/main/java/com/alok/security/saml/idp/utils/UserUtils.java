@@ -4,6 +4,7 @@ import com.alok.security.saml.idp.model.IDPUserDetails;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.saml.saml2.attribute.Attribute;
+import org.yaml.snakeyaml.events.Event;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,7 +41,13 @@ public class UserUtils {
     public static IDPUserDetails getCurrentUserDetails(Authentication authentication) {
         IDPUserDetails userDetails = null;
         if (authentication != null && authentication.getPrincipal() instanceof IDPUserDetails) {
-            userDetails = (IDPUserDetails) authentication.getPrincipal();
+            //userDetails = (IDPUserDetails) authentication.getPrincipal();
+            for (IDPUserDetails user: getAllUserLoginDetails()) {
+                if (user.getUsername().equalsIgnoreCase(((IDPUserDetails) authentication.getPrincipal()).getUsername())) {
+                    userDetails = user;
+                }
+
+            }
         }
         return userDetails;
     }
