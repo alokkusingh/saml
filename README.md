@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/alokkusingh/saml.svg?branch=master)](https://travis-ci.org/github/alokkusingh/saml)
+
 # SAML Identity Provider and Service Provider Services
 ## IdP and SP both the services provide SAML meta data URL to negotiate the service:
         - http://localhost:8081/alok-idp/saml/idp/metadata
