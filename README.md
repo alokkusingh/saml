@@ -3,7 +3,9 @@
         - http://localhost:8081/alok-idp/saml/idp/metadata
         - http://localhost:8082/hello-sp/saml/sp/metadata
         
-## It supports SAML authentication request initiated by anyone - IdP or SPS
+## It supports SAML authentication triggered by:
+- `SPS` - SPS sends **SML Request** to IdP, IdP authenticate the user and responds with **SAMl Response**.
+- `IdP` - IdP directly sends **SAML Reponse** to SPS. No **SAML Request** generated.
 
 ## both the service sign and encrypt metadata data and SAML Request and SAML Response
 
