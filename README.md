@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/alokkusingh/saml.svg?branch=master)](https://travis-ci.org/github/alokkusingh/saml)
+[![GitHub issues](https://img.shields.io/github/issues/alokkusingh/saml.svg)](https://github.com/alokkusingh/saml/issues)
+[![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/alokkusingh/saml.svg?maxAge=2592000)]()
 
 # SAML Identity Provider and Service Provider Services
 ## IdP and SP both the services provide SAML meta data URL to negotiate the service:
