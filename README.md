@@ -8,7 +8,7 @@
         - http://localhost:8082/hello-sp/saml/sp/metadata
         
 ## It supports SAML authentication initiated by:
-- `SPS` - SPS sends **SAML Request** to IdP, IdP authenticate the user and responds with **SAMl Response**.
+- `SPS` - SPS sends **SAML Request** to IdP, IdP authenticate the user and responds with **SAML Response**.
 
         - Usecase: 
 - `IdP` - IdP directly sends **SAML Reponse** to SPS. No **SAML Request** generated.
