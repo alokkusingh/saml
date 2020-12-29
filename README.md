@@ -9,7 +9,11 @@
         
 ## It supports SAML authentication triggered by:
 - `SPS` - SPS sends **SML Request** to IdP, IdP authenticate the user and responds with **SAMl Response**.
+
+        - Usecase: 
 - `IdP` - IdP directly sends **SAML Reponse** to SPS. No **SAML Request** generated.
+
+        - Usecase: **Signle Sign-on** - if we want to embed a secure web page provided by guest application (will act as SPS service) as iFrame to the web page provided by host application (will act as IdP service). The Guest server validates the user credentials as part of login process and the same time generates **SAML Response** for guest application. When loading guest application web page to the Web page (as iFrame) the **SAML Reponse** shall be sent to guest application. Guest application shall use **SAML Response** to Authenticate/Authorize user without asking additinal credentials from user. Seemless single sign-on takes place.
 
 ### Both the services sign and encrypt Metadata/SAML Request/SAML Response
 
